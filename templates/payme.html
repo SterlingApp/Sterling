@@ -36,7 +36,7 @@
 							<div class="input-label ">
 							select
 							</div>
-							<select class="bgnew" name="selectAccount" ng-model="paymeValues.selectAccount" ng-options="pay.DISPLAY_NAME for pay in bank_details" required>
+							<select class="bgnew" name="selectAccount" ng-model="paymeValues.selectAccount"  ng-options="pay.DISPLAY_NAME for pay in bank_details" required>
 							<option selected disabled value=""> Select Bank Account</option>
 							</select>
 						</label>
@@ -89,7 +89,7 @@
 					
 					<div class="row">
 						<div class="col text-center">
-							<button class="button button-calm button-small icon-left ion-android-upload formButton1"   ng-click="upload();" type="submit" >Upload</button>
+							<button class="button button-calm button-small formButton1"   ng-click="upload();" type="submit" ><i side="left"  class="icon-left ion-android-upload" ></i><span style="margin-top:10px;">Upload</span></button>
 							<span ng-show="myForm.imgValue.$dirty && myForm.imgValue.$invalid"></span>
 						</div>
 					</div>
