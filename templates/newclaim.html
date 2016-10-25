@@ -14,7 +14,7 @@
 					<div class="card">
 						<div class="item item-avatar">
 							<img src="img/item/account_balance.png">
-							<div class="ItemlineHead cardContent">Account balance</div>
+							<div class="ItemlineHead cardContent">Account Balance</div>
 							<div class="ItemlineValueText cardContent">{{newclaim_balance| currency}}</div>
 						</div>
 					</div>
@@ -31,7 +31,7 @@
 						
 						<div class="row">
 							<span style="color:red" ng-show="myForm.Bankaccount.$dirty && myForm.Bankaccount.$invalid">
-							<span ng-show="myForm.Bankaccount.$error.required"> Bankaccount is required.</span>
+							<span ng-show="myForm.Bankaccount.$error.required"> Bankaccount is Required.</span>
 							</span>
 						</div>				 
 
@@ -43,7 +43,7 @@
 						
 						<div class="row">
 							<span style="color:red" ng-show="myForm.amount.$dirty && myForm.amount.$invalid">
-							<span ng-show="myForm.amount.$error.required"> Amount is required.</span>
+							<span ng-show="myForm.amount.$error.required"> Amount is Required.</span>
 							<p style="color:Red" ng-show=" myForm.amount.$error.number">Please Enter Number's Only.</p>
 							</span>
 						</div>
@@ -55,7 +55,7 @@
 						
 						<div class="row">
 							<span style="color:red" ng-show="myForm.endTransDate.$dirty && myForm.startTransDate.$invalid">
-							<span ng-show="myForm.startTransDate.$error.required"> Start Transaction Date is required.</span>
+							<span ng-show="myForm.startTransDate.$error.required"> Start Transaction Date is Required.</span>
 							</span>
 						</div>
 
@@ -66,7 +66,7 @@
 						
 						<div class="row">
 							<span style="color:red" ng-show="myForm.endTransDate.$dirty && myForm.endTransDate.$invalid">
-							<span ng-show="myForm.endTransDate.$error.required">End  Transaction Date is required.</span>
+							<span ng-show="myForm.endTransDate.$error.required">End  Transaction Date is Required.</span>
 							</span>
 						</div>
 
@@ -116,7 +116,7 @@
 							</label> 
 							<div class="row">
 							<span style="color:red" ng-show="myForm.taxid.$dirty && myForm.taxid.$invalid">
-							<span ng-show="myForm.taxid.$error.required"> Provider's Tax ID is required.</span>
+							<span ng-show="myForm.taxid.$error.required"> Provider's Tax ID is Required.</span>
 							<p style="color:red" ng-show="myForm.taxid.$error.pattern"> Please Enter Text.</p>
 
 							</span>

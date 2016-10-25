@@ -43,7 +43,7 @@
 
 						<div class="row">
 							<span style="color:red" ng-show="myForm.selectAccount.$dirty && myForm.selectAccount.$invalid">
-							<span ng-show="myForm.selectAccount.$error.required"> selectAccount is required.</span>
+							<span ng-show="myForm.selectAccount.$error.required"> SelectAccount is Required.</span>
 							</span>
 						</div>
 
@@ -54,7 +54,7 @@
 
 						<div class="row" >
 							<span style="color:red" ng-if="myForm.amount.$dirty && myForm.amount.$invalid">
-							<span style="color:Red" ng-show=" myForm.amount.$error.required"> Amount is required.</span>
+							<span style="color:Red" ng-show=" myForm.amount.$error.required"> Amount is Required.</span>
 							<p style="color:Red" ng-show=" myForm.amount.$error.number">Please Enter Number's Only.</p>
 							</span>
 						</div>
@@ -67,7 +67,7 @@
 
 						<div class="row" >
 							<span style="color:red" ng-show="myForm.transaction.$dirty && myForm.transaction.$invalid ">
-							<span style="color:red" ng-show=" myForm.transaction.$error.required" > Transaction Date is required.</span>
+							<span style="color:red" ng-show=" myForm.transaction.$error.required" > Transaction Date is Required.</span>
 							</span>
 						</div>
 
@@ -82,7 +82,7 @@
 						
 						<div class="row" ng-show="msghide">
 							<span style="color:red" ng-show="myForm.category.$dirty && myForm.category.$invalid">
-							<span ng-show="myForm.category.$error.required"> Category is required.</span>
+							<span ng-show="myForm.category.$error.required"> Category is Required.</span>
 							</span>
 						</div>
 					</div>
