@@ -714,8 +714,12 @@ $scope.show1 = false;
 	$scope.newclaim_balance=$rootScope.newclaim_balance;
     $scope.newclaimvalues={taxid:'',amount:'',dependent:'',patient:'',Bankaccount:'',startTransDate:'',endTransDate:''};
 	$scope.imgSrc=[];
-	 
-	 $ionicScrollDelegate.scrollBottom(true);
+	$ionicScrollDelegate.scrollBottom(true);
+	$scope.floatlabel=false;
+	$scope.SelectFloat = function ()
+	{ 
+		$scope.floatlabel=true; 
+    }
 	
 	
 	 $scope.goback=function()
@@ -890,6 +894,7 @@ $scope.show1 = false;
 	};
 	$scope.newclaimsubmit=function(){
 		
+		
 		if($scope.newclaimvalues.amount == 0){
 		$cordovaDialogs.alert('Please enter the amount greater than 0','Sorry','OK')
 			.then(function() {
@@ -931,6 +936,7 @@ $scope.show1 = false;
 				myEl.removeAttr('src');
 				
 				 $scope.newclaimvalues={};
+				 $scope.floatlabel=false;
 					
 		});
 		return false;
@@ -943,15 +949,10 @@ $scope.show1 = false;
 				     	// $scope.myForm.$setPristine();
                      // $scope.ds=false;
                      	$scope.imgSrc= '';
-						var myEl = angular.element( document.querySelector( '#receipt' ) );
-						myEl.removeAttr('src');
-				      $scope.newclaimvalues={};
-					
-				 
-					 
-				     
-					
-				    
+					var myEl = angular.element( document.querySelector( '#receipt' ) );
+					myEl.removeAttr('src');
+				    $scope.newclaimvalues={};
+					$scope.floatlabel=false;     			    
 		});
 		return false;
 		
@@ -970,7 +971,6 @@ $scope.show1 = false;
 	$rootScope.hidecontent=true;
 	localStorage.setItem("backCount","3");
 	$scope.access_token = localStorage.getItem('access_token');
-   
 	$scope.hsaaccId=$rootScope.hsaaccId;
     $scope.hsaaccno=$rootScope.hsaaccno;
 	$scope.fsaaccno=$rootScope.fsaaccno;
@@ -980,8 +980,12 @@ $scope.show1 = false;
 	$scope.newclaim_balance=$rootScope.newclaim_balance;
     $scope.newclaimvalues={taxid:'',amount:'',dependent:'',patient:'',Bankaccount:'',startTransDate:'',endTransDate:''};
 	$scope.imgSrc=[];
-	 
-	 $ionicScrollDelegate.scrollBottom(true);
+	$ionicScrollDelegate.scrollBottom(true);
+	$scope.floatlabel=false;
+	$scope.SelectFloat = function ()
+	{ 
+		$scope.floatlabel=true; 
+    }
 	 $scope.goback=function()
 	{
 		// $rootScope.hidecontent=true;
@@ -1072,6 +1076,7 @@ $scope.show1 = false;
 				var myEl = angular.element( document.querySelector( '#receipt' ) );
 				myEl.removeAttr('src');
 				 $scope.newclaimvalues={};
+				 $scope.floatlabel=false;
 				
 				  // $scope.myForm.$setPristine();		
 		});
@@ -1086,11 +1091,9 @@ $scope.show1 = false;
                      // $scope.ds=false;
                      	$scope.imgSrc= '';
 						var myEl = angular.element( document.querySelector( '#receipt' ) );
-						myEl.removeAttr('src');
-				     	
-					 		 
-                     // $scope.ds=false;						
+						myEl.removeAttr('src'); 						
 				   $scope.newclaimvalues={};
+				   $scope.floatlabel=false;
 				  // $scope.myForm.$setPristine();
 				    
 		});
@@ -3208,6 +3211,23 @@ $scope.show1 = false;
     $scope.hsaaccId=$rootScope.hsaaccId;
     $scope.hsaaccno=$rootScope.hsaaccno;
 	$scope.msghide=true;
+	$scope.floatlabel=false;
+	$scope.floatlabel1=false;
+	
+$scope.SelectFloat = function (){ 
+	// alert();
+	$scope.floatlabel=true; 
+	
+}
+$scope.SelectFloat1 = function (){ 
+	
+	$scope.floatlabel1=true;
+ 
+}
+
+$scope.turnBlue = function() {
+    $scope.customStyle.style = {"color":"blue"};
+}
 	
 	 // $scope.ds=true;
 	$scope.upload = function(){
@@ -3392,6 +3412,8 @@ $scope.show1 = false;
 				var myEl = angular.element( document.querySelector( '#receipt' ) );
 				myEl.removeAttr('src');
 				 $scope.paymeValues={};
+				 $scope.floatlabel1=false;
+				 $scope.floatlabel=false;
 				
 				
 		});
@@ -3408,12 +3430,9 @@ $scope.show1 = false;
 						var myEl = angular.element( document.querySelector( '#receipt' ) );
 						myEl.removeAttr('src');
 				     	 $scope.paymeValues={};
-					 		 
-                     // $scope.ds=false;						
-				  
-				 
-					 
-				     
+						  $scope.floatlabel1=false;
+				          $scope.floatlabel=false;				 		 
+                     // $scope.ds=false;									     
 					
 				    
 		});
@@ -3480,8 +3499,12 @@ $scope.payme2=function(myForm){
 	localStorage.setItem("backCount","4");
 	$scope.hsaaccId=$rootScope.hsaaccId;
 	$scope.payprovierValues={selectPayee:'',patient_name:'',amount:'',TransDate:'',description:''};
-	
+	$scope.floatlabel=false;
 	$scope.TransDate="";
+	$scope.SelectFloat = function ()
+	{ 
+		$scope.floatlabel=true; 
+    }
 	$scope.upload = function(){
 		$cordovaDialogs.confirm('Choose your option', 'Upload Receipt', ['Camera','Gallery'])
 		.then(function(options) {
@@ -3672,6 +3695,7 @@ $scope.payme2=function(myForm){
 				var myEl = angular.element( document.querySelector( '#receipt' ) );
 				myEl.removeAttr('src');
 				$scope.payprovierValues={};
+				$scope.floatlabel=false;
 		});
 		return false;
 		}else if(data.status == "FAILED"){
@@ -3682,6 +3706,7 @@ $scope.payme2=function(myForm){
 				var myEl = angular.element( document.querySelector( '#receipt' ) );
 				myEl.removeAttr('src');
 				$scope.payprovierValues={};
+				$scope.floatlabel=false;
 		});
 		return false;
 		}
@@ -4953,6 +4978,11 @@ $scope.show1 = false;
 	$scope.hsaaccno=$rootScope.hsaaccno;
 	$scope.acoinde = {selectAccount:'',amount:'',description:'',startTransDate:'',endTransDate:''};
 	$scope.imgSrc=[];
+	$scope.floatlabel=false;
+	$scope.SelectFloat = function ()
+	{ 
+		$scope.floatlabel=true; 
+    }
 	
 	$scope.upload = function(){
 		$cordovaDialogs.confirm('Choose your option', 'Upload Receipt', ['Camera','Gallery'])
@@ -5140,6 +5170,7 @@ $scope.show1 = false;
 				myEl.removeAttr('src');
 				
 				 $scope.acoinde={};
+				 $scope.floatlabel=false;
 					
 		});
 		return false;
@@ -5155,8 +5186,7 @@ $scope.show1 = false;
 						var myEl = angular.element( document.querySelector( '#receipt' ) );
 						myEl.removeAttr('src');
 				      $scope.acoinde={};
-					 
-				
+					  $scope.floatlabel=false;
 		});
 		return false;
 		
@@ -5183,6 +5213,11 @@ $scope.show1 = false;
 	$scope.hraacc= $rootScope.hraaccno;
 	$scope.provideracoinde={selectpayee:'',amount:'',description:'',startTransDate:'',endTransDate:''};
 	$scope.imgSrc=[];
+	$scope.floatlabel=false;
+	$scope.SelectFloat = function ()
+	{ 
+		$scope.floatlabel=true; 
+    }
 	
 	$scope.upload = function(){
 		$cordovaDialogs.confirm('Choose your option', 'Upload Receipt', ['Camera','Gallery'])
@@ -5267,6 +5302,7 @@ $scope.show1 = false;
 				myEl.removeAttr('src');
 				
 				 $scope.provideracoinde={};
+				 $scope.floatlabel=false;
 					
 		});
 		return false;
@@ -5282,12 +5318,7 @@ $scope.show1 = false;
 						var myEl = angular.element( document.querySelector( '#receipt' ) );
 						myEl.removeAttr('src');
 				      $scope.provideracoinde={};
-					  
-				 
-					 
-				      
-					
-				    
+					  $scope.floatlabel=false;		    
 		});
 		return false;
 		

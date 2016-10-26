@@ -302,7 +302,7 @@ hr{
     width: 100%;
 }
 .ItemlineHead1{
-	color:#C0BDBD;
+	color:#5985AF;
 	font-family: 'Avenir Next LT Pro';
 	font-weight: normal;
 	font-style: normal;
@@ -442,6 +442,7 @@ hr{
 }
 .no-errors {
 	border-bottom: 2px solid green;
+
 }
 .no-padding {
     padding: 0px !important;
@@ -627,21 +628,48 @@ ion-item.item:hover a {
 .item-text-wrap{
 	line-height:17px ! important;
 }
+
 	
-/* input::-webkit-input-placeholder {
-color: black!important;
+input::-webkit-input-placeholder {
+color: #566571!important;
+ opacity: 1;
 }
  
 input:-moz-placeholder { 
-color: black!important;  
+color: #566571!important; 
+ opacity: 1; 
 }
  
 input::-moz-placeholder {  
- color: black!important;  
-}  */
+ color: #566571!important;  
+  opacity: 1;
+} 
 .ion-android-upload{
 	
 	font-size:23px !important;
 	margin-right:10px;
 	margin-top:10px;
  }
+ .Select-Float{
+	margin-left:20px;
+	margin-bottom:-9px;
+ }
+ /* .SelectColor{
+	 color:#C2C5C8! important;
+ }
+	.red{
+  color:#6CA0DA;
+}
+
+.blue{
+  color:blue;
+}
+select option{
+	color:red;
+}
+.placeholder{
+	color:#aaa;
+}
+select option:disabled {
+    color: pink;
+} */
