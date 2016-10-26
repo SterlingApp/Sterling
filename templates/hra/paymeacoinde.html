@@ -23,11 +23,12 @@
 
 					<div>
 						<div class="list">
+							<span class="input-label ItemlineHead1 Select-Float" ng-show="floatlabel">Select Bankaccount</span>
 							<label class="item item-input item-select formselect bgnew "  ng-class="{ 'has-errors' :myForm.selectPayee.$dirty && myForm.selectPayee.$invalid,'no-errors' :myForm.selectPayee.$valid }">
 								<span class="input-label bgnew">
 								select
 								</span>
-								<select class="bgnew" name="selectPayee"  ng-model="acoinde.selectAccount" ng-options="pay.DISPLAY_NAME for pay in bank_details" required>
+								<select class="bgnew" name="selectPayee"  ng-model="acoinde.selectAccount" ng-options="pay.DISPLAY_NAME for pay in bank_details" ng-change="SelectFloat()"required>
 								<option selected disabled value="" class="ItemlineHead1"> Select Bankaccount</option>
 								</select>
 							</label>
