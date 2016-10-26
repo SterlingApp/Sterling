@@ -16,7 +16,7 @@
 	<ion-content scroll="false" class="bgnew">
 		<div class="div" ng-repeat="data in plan_types">
 			<a ng-click="getClaimData(data)">
-			<img src="img/FsaClaim.png" style="height: 100px; width: 100px;">
+			<img src="img/home/{{data.LOOKUP_CODE}}.svg" style="height: 100px; width: 100px;">
 			<p class="home-head">{{data.MEANING}}</p>
 			</a>
 		</div>
