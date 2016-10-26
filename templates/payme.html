@@ -12,6 +12,7 @@
 		input[type=text]:focus {	
 		  box-shadow: -8px 10px 0px -7px #5FBA7D, 8px 10px 0px -7px #5FBA7D;
 		}
+	
 	</style>
 	<ion-content>	     
 		<form name="myForm">
@@ -32,12 +33,14 @@
 					</div>
 					
 					<div class="list">
+						<span class="input-label ItemlineHead1 Select-Float" ng-show="floatlabel">Select Bank Account</span>
+						
 						<label class="item item-input item-select formselect bgnew" ng-class="{ 'has-errors' :myForm.selectAccount.$dirty && myForm.selectAccount.$invalid,'no-errors' :myForm.selectAccount.$valid }">
 							<div class="input-label ">
 							select
 							</div>
-							<select class="bgnew" name="selectAccount" ng-model="paymeValues.selectAccount"  ng-options="pay.DISPLAY_NAME for pay in bank_details" required>
-							<option selected disabled value=""> Select Bank Account</option>
+							<select class="bgnew SelectColor" name="selectAccount" ng-model="paymeValues.selectAccount"  ng-options="pay.DISPLAY_NAME for pay in bank_details" ng-change="SelectFloat()" required>
+							<option selected disabled value="" class="red"> Select Bank Account</option>
 							</select>
 						</label>
 
@@ -70,15 +73,26 @@
 							<span style="color:red" ng-show=" myForm.transaction.$error.required" > Transaction Date is Required.</span>
 							</span>
 						</div>
-
-						<label class="item item-input item-select formselect" ng-class="{ 'has-errors' :myForm.category.$dirty && myForm.category.$invalid ,'no-errors' :myForm.category.$valid   }">
+						
+						<span class="input-label ItemlineHead1 Select-Float" ng-show="floatlabel1">Category</span>
+						
+						<label class="item item-input  item-select formselect" ng-class="{ 'has-errors' :myForm.category.$dirty && myForm.category.$invalid ,'no-errors' :myForm.category.$valid   }">
+						
 							<span class="input-label">
 							Category
 							</span>
-							<select class="bgnew" name="category" ng-model="paymeValues.category" ng-options="pay.DESCRIPTION for pay in categories" required>
-							<option selected disabled value="">Category</option>
+							<select class="bgnew " name="category" ng-model="paymeValues.category"  ng-change="SelectFloat1()"  ng-options="pay.DESCRIPTION for pay in categories" required>
+							<option selected disabled value="" class="placeholder" >Category</option>
+							
 							</select>
+							
 						</label>
+						<!-- 
+						<label class = "item item-input item-select" ng-class="colors">
+											change
+	
+  
+						</label> -->
 						
 						<div class="row" ng-show="msghide">
 							<span style="color:red" ng-show="myForm.category.$dirty && myForm.category.$invalid">
