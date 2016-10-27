@@ -2767,10 +2767,10 @@ $scope.show1 = false;
 	{
       $http.get(" http://app.sterlinghsa.com/api/v1/accounts/taxstatement",{params:{'acct_id':$rootScope.hsaaccId},headers: {'Content-Type':'application/json; charset=utf-8','Authorization':$scope.      access_token} } )
       .success(function(data){
-     //alert("Data: " + JSON.stringify(data));
-	  $ionicLoading.hide();
-	 $scope.tax_statement_list = data.tax_statement_list;
-   
+		//alert("Data: " + JSON.stringify(data));
+		$ionicLoading.hide();
+		$scope.tax_statement_list = data.tax_statement_list;
+		$scope.tax_year = data.tax_statement_list[0].TAX_YEAR;
      }).error(function(err){
       $ionicLoading.hide();
       $cordovaDialogs.confirm('Session expired, Please Login Again', 'Sorry', 'ok')
@@ -2781,7 +2781,7 @@ $scope.show1 = false;
       });
     }
 
- $scope.form1099=function($sce){
+ $scope.form10991=function($sce){
   // $http.post(' http://app.sterlinghsa.com/api/v1/accounts/taxstatementpdf',{acct_num:$rootScope.hsaaccno,type:'1099',tax_year:$scope.tax_statement_list[0].TAX_YEAR},{headers: {'Content-Type':'application/pdf'}},{responseType : 'arraybuffer'})
   // .success(function(data){
    // alert("Data: " + JSON.stringify(data));
@@ -2801,7 +2801,7 @@ $scope.show1 = false;
   // });
  
  }
- $scope.form1099=function(){
+ $scope.form10991=function(){
   // $http.post(' http://app.sterlinghsa.com/api/v1/accounts/taxstatementpdf',{acct_num:$rootScope.hsaaccno,type:'1099',tax_year:$scope.tax_statement_list[0].TAX_YEAR},{headers: {'Content-Type':'application/pdf'}},{responseType : 'arraybuffer'})
   // .success(function(data){
    // alert("Data: " + JSON.stringify(data));
@@ -4166,22 +4166,12 @@ $scope.payme2=function(myForm){
 .controller('makecontributeCtrl', function($scope,$cordovaNetwork,$rootScope,$ionicPlatform,$cordovaDatePicker,$http,$location,$ionicModal,$cordovaDialogs,$ionicLoading,$cordovaNetwork) {
 	$rootScope.hidecontent=true;
 	$scope.TransDate="";
-	$scope.floatlabel=false;
-	$scope.floatlabel1=false;
-	
-	$scope.SelectFloat = function ()
-	{ 
-	
-		$scope.floatlabel=true; 
-	
+	$scope.SelectFloat = function (){
+		$scope.floatlabel=true;
 	}
-	$scope.SelectFloat1 = function ()
-	{ 
-	
+	$scope.SelectFloat1 = function (){
 		$scope.floatlabel1=true;
- 
 	}
-
 	
 	$scope.getTransDate=function(){
 		 var options = {
@@ -4347,8 +4337,6 @@ $scope.payme2=function(myForm){
 			$cordovaDialogs.alert('Transaction ID is '+ "" + $scope.transactionid , 'Contribution Submitted Successfully', 'OK')
 			.then(function() {
 				$scope.makecontribute={};
-				$scope.floatlabel=false;
-				$scope.floatlabel1=false;
 				 $scope.myForm.setPristine();
 				
 		});
@@ -4358,8 +4346,6 @@ $scope.payme2=function(myForm){
 			$cordovaDialogs.alert(data.error_message, 'Sorry', 'OK')
 			.then(function() {
 				$scope.makecontribute={};
-				$scope.floatlabel=false;
-				$scope.floatlabel1=false;
 				
 		});
 		return false;
