@@ -36,7 +36,7 @@
 						<span class="input-label ItemlineHead1 Select-Float" ng-show="floatlabel">Select Bank Account</span>
 						<label class="item item-input item-select formselect" ng-class="{ 'has-errors' :myForm.selectAccount.$dirty && myForm.selectAccount.$invalid,'no-errors' :myForm.selectAccount.$valid }">
 							<div class="input-label ItemlineHead1">select</div>
-							<select class="bgnew" name="selectAccount" ng-model="makecontribute.selectAccount" ng-change="SelectFloat()"  required>
+							<select class="bgnew" name="selectAccount" ng-model="makecontribute.selectAccount" ng-change="SelectFloat()" required>
 								<option value="">Select Bank Account</option>
 								<option ng-repeat="data in bank_details">{{data.DISPLAY_NAME}}</option>
 							</select>
@@ -89,12 +89,11 @@
 							</span>
 						</div>
 						<span class="input-label ItemlineHead1 Select-Float" ng-show="floatlabel1">Select Description</span>
-						
 						<label class="item item-input item-select formselect" ng-class="{ 'has-errors' :myForm.selectdescription.$dirty &&   myForm.selectdescription.$invalid ,'no-errors' :myForm.selectdescription.$valid   }" >
 							<span class="input-label">
 							Description
 							</span>
-							<select class="bgnew" name="selectdescription" ng-model="makecontribute.selectdescription" ng-change="SelectFloat1()"  required>
+							<select class="bgnew" name="selectdescription" ng-model="makecontribute.selectdescription" ng-change="SelectFloat1()" required>
 								<option value="" > Select Description</option>
 								<option ng-repeat="data in description">{{data.FEE_NAME}}</option>
 							</select>

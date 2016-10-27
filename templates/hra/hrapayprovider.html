@@ -14,11 +14,13 @@
     }
   </style>
 	<ion-content scroll="false" class="bgnew">
-		<div class="div" ng-repeat="data in plan_types">
-			<a ng-click="getClaimData(data)">
-			<img src="img/home/{{data.LOOKUP_CODE}}.svg" style="height: 100px; width: 100px;">
-			<p class="home-head">{{data.MEANING}}</p>
-			</a>
+		<div class="padding">
+			<div class="list" ng-repeat="data in plan_types">
+				<a class="item shadow item-avatar">
+					<img src="img/home/{{data.LOOKUP_CODE}}.svg">
+					<div class="home-head claim-menu-head">{{data.MEANING}}</div>
+				</a>
+			</div>
 		</div>
 	</ion-content>
 </ion-view>
