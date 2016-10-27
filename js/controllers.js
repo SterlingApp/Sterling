@@ -4166,6 +4166,22 @@ $scope.payme2=function(myForm){
 .controller('makecontributeCtrl', function($scope,$cordovaNetwork,$rootScope,$ionicPlatform,$cordovaDatePicker,$http,$location,$ionicModal,$cordovaDialogs,$ionicLoading,$cordovaNetwork) {
 	$rootScope.hidecontent=true;
 	$scope.TransDate="";
+	$scope.floatlabel=false;
+	$scope.floatlabel1=false;
+	
+	$scope.SelectFloat = function ()
+	{ 
+	
+		$scope.floatlabel=true; 
+	
+	}
+	$scope.SelectFloat1 = function ()
+	{ 
+	
+		$scope.floatlabel1=true;
+ 
+	}
+
 	
 	$scope.getTransDate=function(){
 		 var options = {
@@ -4331,6 +4347,8 @@ $scope.payme2=function(myForm){
 			$cordovaDialogs.alert('Transaction ID is '+ "" + $scope.transactionid , 'Contribution Submitted Successfully', 'OK')
 			.then(function() {
 				$scope.makecontribute={};
+				$scope.floatlabel=false;
+				$scope.floatlabel1=false;
 				 $scope.myForm.setPristine();
 				
 		});
@@ -4340,6 +4358,8 @@ $scope.payme2=function(myForm){
 			$cordovaDialogs.alert(data.error_message, 'Sorry', 'OK')
 			.then(function() {
 				$scope.makecontribute={};
+				$scope.floatlabel=false;
+				$scope.floatlabel1=false;
 				
 		});
 		return false;
