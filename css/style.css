@@ -422,6 +422,9 @@ hr{
 .menu-head{
 	padding-top: 25px;
 }
+.claim-menu-head{
+	padding-top: 10px;
+}
 .menufont{
 	font-family: 'Avenir Next LT Pro';
 	font-size: 18px;
