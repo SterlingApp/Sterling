@@ -4337,6 +4337,8 @@ $scope.payme2=function(myForm){
 			$cordovaDialogs.alert('Transaction ID is '+ "" + $scope.transactionid , 'Contribution Submitted Successfully', 'OK')
 			.then(function() {
 				$scope.makecontribute={};
+				$scope.floatlabel=false;
+					$scope.floatlabel1=false;
 				 $scope.myForm.setPristine();
 				
 		});
@@ -4346,6 +4348,8 @@ $scope.payme2=function(myForm){
 			$cordovaDialogs.alert(data.error_message, 'Sorry', 'OK')
 			.then(function() {
 				$scope.makecontribute={};
+				$scope.floatlabel=false;
+					$scope.floatlabel1=false;
 				
 		});
 		return false;

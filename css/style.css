@@ -326,6 +326,11 @@ hr{
 	font-size:22px;
 	
 }
+@media  (max-width: 500px) {
+    .ItemHeadLine  {
+       font-size:20px !important;      
+    }
+}
 .ItemLinehr{
 	border-color:#F4851F !important;
 }
